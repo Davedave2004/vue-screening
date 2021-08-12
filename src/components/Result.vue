@@ -1,30 +1,30 @@
 <template>
-    <div class="result">
-      <div class="head">
-        <div class="profile-picture">
-          <img src="https://s3-alpha-sig.figma.com/img/0395/4a2f/83be541c7b3bfd8c11d51bb7c0b89f60?Expires=1629676800&Signature=LNCHzR3FUeOB-cNKacZrhvmtfWyzGq7aQaqQ4VZE6bxnjrd8ykjIwIurI8cgOmu677BaD1kdRvrAPwJqdt80as9typE3SU2yvDdjqY82JxsSHiJA0AqTmPTJehHXLFoz1Moxkj4CSYNwt91CWZj85sJWLxGoX2Q3jrahtGEWvC3V0Jmc6-9408o0bS3TjOoJUa40jkqthm6PQQLepV21XrpFNXE3oBJn6tJ8Dl88lZG9PCcU4V2au~6t29Esb373j2x2QMlSlS5hl-05azADTI89lLxoxokjt77tRBIY1MQz2tZhrA0onqic0mE8VqvL7pFS0VKVFu~fQbXb740Itw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
-          <div class="overlay">
-            <button class="btn btn--edit">Edit</button>
-            <button class="btn btn--view">View</button>
-          </div>
-        </div>
-        <div>
-          <p>{{result.name}}</p>
-          <label class="sub-title">{{result.username}}</label>
-          <q>{{result.company.catchPhrase}}</q>
+  <div class="result">
+    <div class="head">
+      <div class="profile-picture">
+        <img src="https://s3-alpha-sig.figma.com/img/0395/4a2f/83be541c7b3bfd8c11d51bb7c0b89f60?Expires=1629676800&Signature=LNCHzR3FUeOB-cNKacZrhvmtfWyzGq7aQaqQ4VZE6bxnjrd8ykjIwIurI8cgOmu677BaD1kdRvrAPwJqdt80as9typE3SU2yvDdjqY82JxsSHiJA0AqTmPTJehHXLFoz1Moxkj4CSYNwt91CWZj85sJWLxGoX2Q3jrahtGEWvC3V0Jmc6-9408o0bS3TjOoJUa40jkqthm6PQQLepV21XrpFNXE3oBJn6tJ8Dl88lZG9PCcU4V2au~6t29Esb373j2x2QMlSlS5hl-05azADTI89lLxoxokjt77tRBIY1MQz2tZhrA0onqic0mE8VqvL7pFS0VKVFu~fQbXb740Itw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
+        <div class="overlay">
+          <button class="btn btn--edit">Edit</button>
+          <button class="btn btn--view">View</button>
         </div>
       </div>
-      <div class="info">
-        <ul>
-          <li>{{result.email}}</li>
-          <li>{{fullAddress}}</li>
-          <li>{{result.phone}}</li>
-          <li>{{result.website}}</li>
-          <li>{{result.company.name}}</li>
-          <li>{{result.company.bs}}</li>
-        </ul>
+      <div class="profile-text">
+        <p class="name">{{result.name}}</p>
+        <label class="sub-title">@{{result.username}}</label>
+        <q class="catchphrase">{{result.company.catchPhrase}}</q>
       </div>
     </div>
+    <div class="info">
+      <ul class="fa-ul">
+        <li><span class="fa-li"><i class="far fa-envelope"></i></span>{{result.email}}</li>
+        <li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>{{fullAddress}}</li>
+        <li><span class="fa-li"><i class="fas fa-phone-alt"></i></span>{{result.phone}}</li>
+        <li><span class="fa-li"><i class="fas fa-globe"></i></span>{{result.website}}</li>
+        <li><span class="fa-li"><i class="fas fa-briefcase"></i></span>{{result.company.name}}</li>
+        <li><span class="fa-li"><i class="fas fa-industry"></i></span>{{result.company.bs}}</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -54,13 +54,42 @@ export default {
   .head {
     display: flex;
     flex-direction: row-reverse;
+    width: 100%;
+  }
+
+  .profile-text {
+    width: 62%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
 
+  .profile-text > .name {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .profile-text > .sub-title {
+    display: block;
+    color: #909090;
+    align-self: flex-start;
+  }
+
+  .profile-text > .catchphrase {
+    color: #51C5FF;
+    flex-basis: 64%;
+    padding-top: 0.5rem;
+    line-height: 18px;
+    text-align: left;
+  }
+
   .profile-picture {
+    width: 38%;
     position: relative;
-    width: 100%;
     height: auto;
+    font-size: 18px;
+    flex-shrink: 4;
+    margin-left: 1rem;
   }
 
   .profile-picture > img {
@@ -88,8 +117,11 @@ export default {
   .btn {
     border-radius: 5px;
     font-size: 18px;
-    padding: 16px 10px;
+    padding: 10px;
+    height: 40px;
     background: #FFFFFF;
+    width: 4rem;
+    margin: 5px;
   }
 
   .btn--edit {
@@ -102,38 +134,56 @@ export default {
     border: hidden;
     background: #1575BF;
   }
-
-  .sub-title {
-    display: block;
-    color: #909090;
-  }
   
-  q {
-    color: #51C5FF;
+  .fa-ul {
+    margin-left: 1rem;
+  }
+
+  .fa-li {
+    color: #015989;
+  }
+
+  .fa-ul li:not(:last-child) { 
+    margin-bottom: 1rem;  
   }
 
   @media only screen and (min-width: 768px) {
+    .result {
+      padding: 0;
+    }
+
     .head {
       flex-direction: column;
     }
-    .head > img {
-      border-radius: 8px;
+
+    .profile-picture {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .profile-picture > img {
+      object-fit: fill;
+      height: 289px;
+      border-radius: 8px 8px 0 0;
     }
 
     .overlay {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
     }
 
     .profile-picture:hover .overlay {
       opacity: 1;
     }
+
+    .profile-text {
+      width: auto;
+      margin: 1.5rem;
+    }
+
+    .info {
+      margin: 0 2rem 1rem;
+    }
   }
-  
-
 </style>
-
-
-
-

@@ -3,7 +3,7 @@
 
   <section class="search">
     <div class="search-area">
-      <i>Q</i> <!-- TODO: Search Icon -->
+      <i class="fas fa-search"></i>
       <input type="text" placeholder="Find customers" v-model.trim="searchText" />
     </div>
     <div class="sort-area">
@@ -18,7 +18,7 @@
 
   <section class="results">
     <h2 v-if="!results.length" class="js-no-result-msg">No customer(s) found with the search criteria.</h2>
-    <Result v-else v-for="result in results" :key="result.id" :result="result"/>
+    <Result v-for="result in results" :key="result.id" :result="result"/>
   </section>
 
 </template>
@@ -98,17 +98,28 @@ export default {
     box-sizing: border-box;
   }
 
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   #app {
     width: 100%;
+    height: auto;
     min-height: 100vh;
     background: #F2F5FA;
-    font-family: Rubik;
-    font-size: 16px;
+    font-family: 'Rubik';
+    font-size: 13px;
+    color: #202223;
   }
 
   header {
     width: 100%;
-    height: 91px;
+    height: 65px;
 
     background: #FFFFFF;
     box-shadow: 9px 6px 24px -2px rgba(0, 0, 0, 0.06);
@@ -118,29 +129,96 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 16px;
+    margin: auto 1.5rem;
+  }
+
+  .search-area {
+    width: 100%;
+    height: 50px;
+    min-width: 333px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin: 1.5rem auto;
+    padding: 1rem 1.5rem;
+  }
+
+  .search-area input {
+    border: none;
+    margin-left: 0.5rem;
+  }
+
+  .search-area ::placeholder {
+    color: #202223;
+    opacity: 1;
   }
 
   .sort-area {
+    min-width: 200px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    height: 50px;
+    text-align: center;
+    margin: 1rem 0;
     align-self: flex-end;
   }
 
+  .sort-area select {
+    margin: 1rem 0;
+    border: none;
+    font-size: 16px;
+    width: auto;
+  }
+
   .results {
-    display: flex;
-    flex-direction: column;
-    margin: auto 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    margin: auto 1.5rem;
+    overflow-y: scroll;
+    max-height: 69vh;
+
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+  }
+
+  .results::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 
   @media only screen and (min-width: 768px) {
+    #app {
+      font-size: 16px;
+    }
 
+    header {
+      height: 91px;
+    }
 
     section.search {
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
+      margin: 3.5rem 8rem;
+    }
+
+    .search-area {
+      width: 40%;
+      margin: 0;
+    }
+
+    .sort-area {
+      width: 15%;
+      align-self: center;
     }
 
     .results {
-      flex-direction: row;
+      grid-template-columns: auto auto auto auto;
+      gap: 2rem 2.5rem;
+      
+      margin: 0 8rem;
+
+      overflow-y: none;
+      max-height: unset; 
     }
   }
 </style>
