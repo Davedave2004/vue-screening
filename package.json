@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "faker": "5.5.3",
     "vue": "^3.0.0-0"
   },
   "devDependencies": {
@@ -40,5 +41,5 @@
     "not dead"
   ],
   "keywords": [],
-  "description": "My output for the screening test"
+  "description": "Output for screening test"
 }

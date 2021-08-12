@@ -243,7 +243,8 @@ section.search {
   }
 
   .results {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(363px, 1fr));
+    /* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
     gap: 2rem 2.5rem;
 
     margin: 0 8rem;
