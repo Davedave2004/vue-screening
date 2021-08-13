@@ -129,6 +129,7 @@ body::-webkit-scrollbar {
 }
 
 body {
+  background: #F2F5FA;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -137,7 +138,6 @@ body {
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background: #F2F5FA;
   font-family: "Rubik";
   font-size: 13px;
   color: #202223;
@@ -156,16 +156,16 @@ section.search {
   flex-direction: column;
   align-items: center;
   font-size: 16px;
-  margin: auto 1.5rem;
+  margin: 1.5rem 1.5rem;
 }
 
 .search-area {
   width: 100%;
   height: 50px;
-  min-width: 333px;
+  min-width: 17rem;
   background: #FFFFFF;
   border-radius: 8px;
-  margin: 1.5rem auto;
+  margin-bottom: 1rem;
   padding: 1rem 1.5rem;
 }
 
@@ -185,7 +185,7 @@ section.search {
   background: #FFFFFF;
   height: 50px;
   text-align: center;
-  margin: 1rem 0;
+  margin-top: 1rem;
   align-self: flex-end;
 }
 
@@ -197,13 +197,16 @@ section.search {
 }
 
 .results {
-  display: grid;
   margin: auto 1.5rem;
   overflow-y: scroll;
   max-height: 69vh;
-
+  
   scrollbar-width: none;
   -ms-overflow-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 26px;
 }
 
 .results::-webkit-scrollbar {
@@ -229,7 +232,7 @@ section.search {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 4rem 10.5rem;
+    margin: 5rem 10.5rem 6rem;
   }
 
   .search-area {
@@ -239,16 +242,13 @@ section.search {
 
   .sort-area {
     width: 14%;
-    align-self: center;
+    margin-top: unset;
   }
 
   .results {
-    grid-template-columns: repeat(4, minmax(363px, 1fr));
-    /* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
+    grid-template-columns: repeat(auto-fit, minmax(363px, 1fr));
     gap: 2rem 2.5rem;
-
-    margin: 0 10.5rem;
-
+    margin: 0 10rem 2rem 10.5rem;
     overflow-y: none;
     max-height: unset;
   }

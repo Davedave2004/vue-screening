@@ -39,7 +39,7 @@
         </li>
         <li>
           <span class="fa-li"><i class="fas fa-industry"></i></span
-          >{{ result.company.bs }}
+          >{{ capitalize(result.company.bs) }}
         </li>
       </ul>
     </div>
@@ -48,6 +48,7 @@
 
 <script>
 import faker from "faker";
+import {capitalize} from '../helpers/stringHelpers';
 
 export default {
   name: "Result",
@@ -62,13 +63,16 @@ export default {
       return `${this.result.address.street}, ${this.result.address.suite}, ${this.result.address.city}, ${this.result.address.zipcode}, ${this.result.address.geo.lat}, ${this.result.address.geo.lng}`;
     },
   },
+  methods: {
+    capitalize
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .result {
-  margin: 0.5rem auto;
+  
   background: #FFFFFF;
   border-radius: 8px;
   padding: 1rem;
@@ -102,8 +106,8 @@ export default {
 .profile-text > .catchphrase {
   color: #51C5FF;
   flex-basis: 64%;
-  padding-top: 0.5rem;
-  line-height: 18px;
+  padding-top: 1rem;
+  line-height: 138%;
   text-align: left;
 }
 
@@ -146,7 +150,7 @@ export default {
   height: 40px;
   background: #FFFFFF;
   width: 4rem;
-  margin: 5px;
+  margin: 0.5rem;
 }
 
 .btn--edit {
@@ -156,25 +160,29 @@ export default {
 
 .btn--view {
   color: #FFFFFF;
+  font-size: 16px;
   border: hidden;
   background: #1575BF;
 }
 
 .fa-ul {
   margin-left: 1rem;
+  margin-right: 1.5rem;
 }
 
 .fa-li {
   color: #015989;
+  margin-bottom: 1rem;
 }
 
-.fa-ul li:not(:last-child) {
+.fa-ul li {
   margin-bottom: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
   .result {
     padding: 0;
+    line-height: 156%;
   }
 
   .head {
@@ -206,8 +214,13 @@ export default {
     margin: 1.5rem;
   }
 
+  .profile-text > .name {
+    font-size: 24px;
+    line-height: 117%;
+  }
+
   .info {
-    margin: 0 2rem 1rem;
+    margin: 0 2rem 1.5rem;
   }
 }
 </style>
