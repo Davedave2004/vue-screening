@@ -1,5 +1,5 @@
 {
-  "name": "vue-screening-test",
+  "name": "vue-screening-test-2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -41,5 +41,5 @@
     "not dead"
   ],
   "keywords": [],
-  "description": "Output for screening test"
+  "description": "A more responsive version"
 }

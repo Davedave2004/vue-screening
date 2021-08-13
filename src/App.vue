@@ -200,7 +200,7 @@ section.search {
   margin: auto 1.5rem;
   overflow-y: scroll;
   max-height: 69vh;
-  
+
   scrollbar-width: none;
   -ms-overflow-style: none;
 
@@ -219,7 +219,7 @@ section.search {
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 835px) {
   #app {
     font-size: 16px;
   }
@@ -246,7 +246,7 @@ section.search {
   }
 
   .results {
-    grid-template-columns: repeat(auto-fit, minmax(363px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(362px, 1fr));
     gap: 2rem 2.5rem;
     margin: 0 10rem 2rem 10.5rem;
     overflow-y: none;

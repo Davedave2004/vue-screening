@@ -48,7 +48,7 @@
 
 <script>
 import faker from "faker";
-import {capitalize} from '../helpers/stringHelpers';
+import { capitalize } from "../helpers/stringHelpers";
 
 export default {
   name: "Result",
@@ -64,15 +64,14 @@ export default {
     },
   },
   methods: {
-    capitalize
-  }
+    capitalize,
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .result {
-  
   background: #FFFFFF;
   border-radius: 8px;
   padding: 1rem;
@@ -179,7 +178,7 @@ export default {
   margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 835px) {
   .result {
     padding: 0;
     line-height: 156%;
