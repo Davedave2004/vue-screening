@@ -229,24 +229,25 @@ section.search {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 3.5rem 8rem;
+    margin: 4rem 10.5rem;
   }
 
   .search-area {
-    width: 40%;
+    width: 35%;
     margin: 0;
   }
 
   .sort-area {
-    width: 15%;
+    width: 14%;
     align-self: center;
   }
 
   .results {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(363px, 1fr));
+    /* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
     gap: 2rem 2.5rem;
 
-    margin: 0 8rem;
+    margin: 0 10.5rem;
 
     overflow-y: none;
     max-height: unset;
