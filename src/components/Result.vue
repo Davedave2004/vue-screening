@@ -115,7 +115,6 @@ export default {
   position: relative;
   height: auto;
   font-size: 18px;
-  flex-shrink: 4;
   margin-left: 1rem;
 }
 
@@ -178,7 +177,7 @@ export default {
   margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: 835px) {
+@media only screen and (min-width: 1025px) {
   .result {
     padding: 0;
     line-height: 156%;
@@ -194,7 +193,6 @@ export default {
   }
 
   .profile-picture > img {
-    height: 289px;
     border-radius: 8px 8px 0 0;
   }
 

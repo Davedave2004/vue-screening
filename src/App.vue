@@ -205,7 +205,7 @@ section.search {
   -ms-overflow-style: none;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  grid-template-columns: 1fr;
   gap: 26px;
 }
 
@@ -219,7 +219,7 @@ section.search {
   text-align: center;
 }
 
-@media only screen and (min-width: 835px) {
+@media only screen and (min-width: 1025px) {
   #app {
     font-size: 16px;
   }
@@ -246,8 +246,8 @@ section.search {
   }
 
   .results {
-    grid-template-columns: repeat(auto-fit, minmax(362px, 1fr));
-    gap: 2rem 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+    gap: 4rem 2.5rem;
     margin: 0 10rem 2rem 10.5rem;
     overflow-y: none;
     max-height: unset;
