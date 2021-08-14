@@ -246,7 +246,8 @@ section.search {
   }
 
   .results {
-    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
+    grid-auto-columns: 328px;
     gap: 4rem 2.5rem;
     margin: 0 10rem 2rem 10.5rem;
     overflow-y: none;
